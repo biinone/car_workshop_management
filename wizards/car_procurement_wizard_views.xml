@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_car_procurement_wizard_form" model="ir.ui.view">
+        <field name="name">car.procurement.wizard.form</field>
+        <field name="model">car.procurement.wizard</field>
+        <field name="arch" type="xml">
+            <form string="جدول المشتريات والمصروفات المباشرة">
+                <group>
+                    <field name="project_id" readonly="1"/>
+                </group>
+                <field name="line_ids">
+                    <tree editable="bottom">
+                        <field name="product_id"/>
+                        <field name="description"/>
+                        <field name="quantity"/>
+                        <field name="cost_price"/>
+                        <field name="employee_id" required="1"/>
+                        <field name="partner_id"/>
+                        <field name="payment_journal_id" placeholder="الخزينة / عهدة الموظفين"/>
+                        <field name="is_custody"/>
+                        <field name="client_ref"/>
+                        <field name="generated_ref" readonly="1"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="action_confirm_and_generate" string="تأكيد وتوليد الفواتير والقيود فوراً" type="object" class="btn-primary"/>
+                    <button string="إلغاء" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
