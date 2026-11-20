@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_customer_vehicle_user,customer.vehicle.user,model_customer_vehicle,base.group_user,1,1,1,1
+access_car_checkin_wizard_user,car.checkin.wizard.user,model_car_checkin_wizard,base.group_user,1,1,1,1
+access_car_procurement_wizard_user,car.procurement.wizard.user,model_car_procurement_wizard,base.group_user,1,1,1,1
+access_car_procurement_wizard_line_user,car.procurement.wizard.line.user,model_car_procurement_wizard_line,base.group_user,1,1,1,1
