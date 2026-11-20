@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_project_project_form_inherit_workshop" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.workshop</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_quotation" string="➕ إنشاء مقايسة" type="object" class="btn-primary"/>
+                <button name="action_open_procurement_wizard" string="📦 المشتريات والمصروفات" type="object" class="btn-secondary"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="vehicle_id"/>
+                <field name="current_odometer"/>
+                <field name="customer_issue"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
