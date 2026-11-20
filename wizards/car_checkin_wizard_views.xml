@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_car_checkin_wizard_form" model="ir.ui.view">
+        <field name="name">car.checkin.wizard.form</field>
+        <field name="model">car.checkin.wizard</field>
+        <field name="arch" type="xml">
+            <form string="دخول سيارة جديدة للورشة">
+                <group>
+                    <group string="بيانات العميل والسيارة">
+                        <field name="partner_id"/>
+                        <field name="vehicle_id"/>
+                        <field name="license_plate"/>
+                    </group>
+                    <group string="المواصفات والعداد">
+                        <field name="brand_id"/>
+                        <field name="model_id"/>
+                        <field name="model_year"/>
+                        <field name="current_odometer"/>
+                    </group>
+                </group>
+                <group string="شكوى العميل وفحص الاستلام">
+                    <field name="customer_issue" placeholder="اكتب شكوى العميل بالتفصيل وملاحظات الفحص الظاهري..."/>
+                </group>
+                <footer>
+                    <button name="action_confirm_checkin" string="تأكيد الدخول وإنشاء المشروع" type="object" class="btn-primary"/>
+                    <button string="إلغاء" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_checkin_wizard" model="ir.actions.act_window">
+        <field name="name">دخول سيارة جديدة</field>
+        <field name="res_model">car.checkin.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_car_checkin" name="🚗 دخول سيارة جديدة" parent="menu_car_workshop_root" action="action_car_checkin_wizard" sequence="1"/>
+</odoo>
